@@ -1,0 +1,17 @@
+.shadow_card {
+    padding: 10px 15px 10px 15px !important;
+    margin-bottom: 10px !important;
+}
+.inline_content h5{
+    display: inline-block;
+    font-size: 15px;
+}
+.inline_content h5:first-child{
+    margin-right: 15px;
+}
+.inline_content p{
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}

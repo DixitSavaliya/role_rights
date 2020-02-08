@@ -1,0 +1,17 @@
+img.picture {
+    height: 39px;
+    width: 47px;
+}
+button.btn.btn-primary.btn-sm {
+    margin-top: 15px;
+}
+.img-upload input {
+    display:none;
+}
+
+i.fa.fa-upload.fa-lg {
+    font-size: 50px;
+}
+.main .container-fluid {
+    padding: 0 20px !important;
+}

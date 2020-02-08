@@ -1,0 +1,498 @@
+socket server started on port 4002
+Listening HTTP on port 3004
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:11, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:11' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:11
+shedular run at 2020-02-04 18:07:11, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:12, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:12' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:12
+shedular run at 2020-02-04 18:07:12, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:13, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:13' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:13
+shedular run at 2020-02-04 18:07:13, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:14, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:14' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:14
+shedular run at 2020-02-04 18:07:14, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:15, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:15' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:15
+shedular run at 2020-02-04 18:07:15, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:16, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:16' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:16
+shedular run at 2020-02-04 18:07:16, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:17, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:17' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:17
+shedular run at 2020-02-04 18:07:17, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:18, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:18' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:18
+shedular run at 2020-02-04 18:07:18, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:19, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:19' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:19
+shedular run at 2020-02-04 18:07:19, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:20, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:20' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:20
+shedular run at 2020-02-04 18:07:20, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:21, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:21' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:21
+shedular run at 2020-02-04 18:07:21, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:22, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:22' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:22
+shedular run at 2020-02-04 18:07:22, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:23, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:23' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:23
+shedular run at 2020-02-04 18:07:23, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:25, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:25' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:25
+shedular run at 2020-02-04 18:07:25, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:26, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:26' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:26
+shedular run at 2020-02-04 18:07:26, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:27, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:27' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:27
+shedular run at 2020-02-04 18:07:27, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:28, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:28' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:28
+shedular run at 2020-02-04 18:07:28, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:29, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:29' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:29
+shedular run at 2020-02-04 18:07:29, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:30, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:30' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:30
+shedular run at 2020-02-04 18:07:30, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:31, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:31' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:31
+shedular run at 2020-02-04 18:07:31, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:32, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:32' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:32
+shedular run at 2020-02-04 18:07:32, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:33, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:33' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:33
+shedular run at 2020-02-04 18:07:33, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:34, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:34' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:34
+shedular run at 2020-02-04 18:07:34, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:35, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:35' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:35
+shedular run at 2020-02-04 18:07:35, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:36, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:36' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:36
+shedular run at 2020-02-04 18:07:36, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:37, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:37' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:37
+shedular run at 2020-02-04 18:07:37, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:38, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:38' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:38
+shedular run at 2020-02-04 18:07:38, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:39, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:39' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:39
+shedular run at 2020-02-04 18:07:39, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:40, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:40' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:40
+shedular run at 2020-02-04 18:07:40, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:41, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:41' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:41
+shedular run at 2020-02-04 18:07:41, PM with empty result
+<========================================== shedular executed ==========================================>
+execution time =========>   2020-02-04 18:07:42, PM
+sql at 
+ select 
+                    sm.*,
+                    ifnull(sm.data->'$.notification.title', NULL) as title,
+                    ifnull(sm.data->'$.type', NULL) as type,
+                    ifnull(sm.data->'$.time', NULL) as time,
+                    ifnull(sm.data->'$.notification.icon', NULL) as icon,
+                    ifnull(sm.data->'$.notification.message', NULL) as message,
+                    NULL as app_list
+                from shedule_master as sm
+                where sm.status = 1 and time = '2020-02-04 18:07:42' and sm.time_type = 1 and run_state = 0
+                order by sm.time desc for time 
+2020-02-04 18:07:42
+shedular run at 2020-02-04 18:07:42, PM with empty result

@@ -1,0 +1,13 @@
+.img-upload input {
+    display:none;
+}
+img.pic {
+    width: 100px;
+    border-radius: 60px;
+}
+.imag i.fa.fa-upload.fa-lg {
+    font-size: 38px;
+}
+input#profile {
+    pointer-events: none;
+}

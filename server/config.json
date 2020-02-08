@@ -1,0 +1,15 @@
+{
+    "current_version" : "v1/",
+    "old_version" : "v1/",
+    "serverKey" : "AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol",
+    "legacy_server_key" : "AIzaSyDcHoAf4n9oGbH76jpsWaKuo-vCwb2zcgc",
+    "sender_id": 866725419895,
+    "web_push_public_key": "BEVXV4EATYJJ2PrUMvY1zCDQqXg20ovuDfeacaB5187XCpAPgnKDwVwFr9gqCwbr1dTJchTZGbZJgRAzZjsIt2o",
+    "web_push_private_key": "Q0yq1YMswCw8g8e_BgoFDjmHdsS8PWSw83clsOiLiNY",
+    "sms_config":{
+        "client_key" : "",
+        "label" : "",
+    	"sender_id" : ""
+    }
+}
+

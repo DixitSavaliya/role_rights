@@ -1,0 +1,107 @@
+
+.content {
+    padding-left: 10px !important;
+}
+.app_detail {
+   position: relative; 
+}    
+.app_detail h6 {
+    padding-top: 5px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #20a8d8;
+    font-weight: 600;
+    padding-right: 0px;
+    padding-left: 10px;
+}
+.app_detail h6:first-child {
+    padding-left: 29px;
+}
+.app_detail h5 {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom:0px ;
+    padding-left: 10px;
+    padding-right: 0px;
+    font-weight: 100;
+    color: #000;
+}
+.padding{
+    padding: 0px !important;
+}
+
+input#no {
+    position: absolute;
+    top:-3px;
+    right: 1px;
+    z-index: 99;
+    cursor: pointer;
+
+}
+.app-img{
+    width: 70px;
+    height: 89px;
+    border-radius: 5px;
+}
+.app_list{
+    height: 600px;
+    overflow-y: scroll;
+    width: 100%;
+    overflow-x: hidden;
+}
+.shadow_card{
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(168,166,168,1);
+    -moz-box-shadow: 2px 2px 10px 0px rgba(168,166,168,1);
+    box-shadow: 2px 2px 10px 0px rgba(168,166,168,1);  
+    border: none !important;
+    border-radius: 5px;
+    padding: 15px;
+}
+.selectedP {
+    margin-top: 10px;
+    margin-left: 11px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.selectP {
+    background-color: transparent !important;
+    border:2px solid #1985ac !important;
+    color:#1985ac !important;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.selectedPAction {
+    /* margin-top: 10px;
+    margin-left: 11px;
+    border-radius: 5px;
+    margin-right: 5px; */
+}
+.selectPAction {
+    /* background-color: transparent !important;
+    border:2px solid #1985ac !important;
+    color:#1985ac !important; */
+    /* margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-right: 5px; */
+}
+.list-group {
+    padding-left: 0;
+    margin: -16px auto 20px auto;
+    width: 99.50%;
+} 
+.list-group-item {
+    padding: 3px !important;
+    z-index: 999999999999999;
+    cursor: pointer;
+}
+
+.btn-group button {
+    margin-left: 8px;
+}

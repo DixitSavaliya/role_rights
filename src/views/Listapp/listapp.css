@@ -1,0 +1,113 @@
+.tright select#exampleCustomSelect {
+    width: 79px;
+    margin-left: 60px;
+}
+.records {
+    display: flex;
+    float: right;
+    margin-right: 0px;
+}
+@media screen and (max-width: 768px) {
+.records {
+    margin-top: 10px;
+}
+}
+@media screen and (max-width: 576px) {
+.col {
+    flex-basis: auto !important;
+    width:100% !important;
+    }    
+}
+
+.searchP {
+    
+}
+.searchP .search {
+    display: inline-block;
+    width: calc(100% - 210px);
+}
+.searchP span {
+    padding: 0 10px;
+    display: inline-block;
+}
+.searchP .drop {
+    display: inline-block;
+    float: right;
+    width: 70px;
+}
+@media(max-width: 768px){
+    .rightapp {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto 10px auto;
+        text-align: center;
+    }
+    .searchP .drop {
+        display: block;
+        float: none;
+        width: 70px;
+        margin: 0 auto 10px auto;
+    }
+    .searchP span {
+        padding: 0 10px;
+        display: block;
+        margin: 0 auto 10px auto;
+        text-align: center;
+    }
+    .searchP .search {
+        display: block;
+        width: calc(100%);
+        margin: 0 auto 10px auto;
+    }
+
+    .searchA{
+        display:block;
+        /* width: calc(100% - 258px); */
+    }
+    
+    .searchA .search {
+        height: 35px;
+        margin-left: 15px;
+        /* width: calc(100% - 378px); */
+        margin-right: 33px;
+    }
+    .searchA .drop {
+        display: block;
+        float: none;
+        width: 70px;
+        margin: 0 auto 10px auto;
+    }
+
+    .searchA span {
+        padding: 0 10px;
+        display: block;
+        margin: 0 auto 10px auto;
+        text-align: center;
+    }
+    
+    
+}
+.searchA{
+    display:flex;
+    /* width: calc(100% - 258px); */
+}
+
+.searchA span {
+    padding: 0 10px;
+    display: inline-block;
+    margin: 0 auto 10px auto;
+}
+
+.searchA .search {
+    height: 35px;
+    margin-left: 15px;
+    width: calc(100% - 430px);
+    margin-right: 33px;
+}
+.searchA .drop {
+    display: block;
+    float: none;
+    width: 70px;
+    margin: 0 auto 10px auto;
+}

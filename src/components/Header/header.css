@@ -1,0 +1,20 @@
+.text a {
+    color: #151E1F !important;
+}
+.img-upload input {
+    display:none;
+}
+img.pic {
+    width: 100px;
+    border-radius: 60px;
+}
+.imag i.fa.fa-upload.fa-lg {
+    font-size: 38px;
+}
+input#profile {
+    pointer-events: none;
+}
+.img-avatar {
+    border-radius: 50em;
+    width: 50px;
+}

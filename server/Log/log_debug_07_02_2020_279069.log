@@ -1,0 +1,3501 @@
+socket server started on port 4002
+Listening HTTP on port 3004
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+a[c] ------> *
+salt ----------------------------------> b.join('')D3EPuw3tCBMMbu5E*CC3e7G2DMiBKmBg
+_updateTokenDetails sql ============> 	
+ update user_master set  
+                    access_token = "D3EPuw3tCBMMbu5E*CC3e7G2DMiBKmBg",
+                    refresh_token = "wIWyBkiXCWm8Xt0h{Pk7hb83HOmimuws",
+                    expire_time = "2020-02-07 11:26:36"
+                    where id = 2
+expire in =>  7139  seconds
+expire in =>  7139  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+a[c] ------> )
+salt ----------------------------------> b.join('')rRbeLJOLPuKlZB37)OfHjYesQp5u2WC2
+_updateTokenDetails sql ============> 	
+ update user_master set  
+                    access_token = "rRbeLJOLPuKlZB37)OfHjYesQp5u2WC2",
+                    refresh_token = "nsMLVCLGToUEdFlZ{AcrvZZxu1jBP5N3",
+                    expire_time = "2020-02-07 11:26:57"
+                    where id = 19
+expire in =>  7140  seconds
+expire in =>  7140  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:_vkbwYlbg8jlfs_8AAAB
+Delete  SocketId:7wIgX-HapoNoZxdKAAAA
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:nbG_LfoKcnHmxWGoAAAD
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  7019  seconds
+expire in =>  7019  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:KQT_HgjLiRqOOKMBAAAC
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:yXZNUi_5Qu9-KV-SAAAF
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  6897  seconds
+expire in =>  6897  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+Delete  SocketId:UmFl2lTDIMIRAoWtAAAE
+Delete  SocketId:d_g_3Dhe5bJek7HEAAAG
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  6805  seconds
+expire in =>  6805  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:vWdT4HrVrPP-RjpAAAAI
+Delete  SocketId:u-rDz1sFF8oYryZfAAAH
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  6788  seconds
+expire in =>  6788  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  6731  seconds
+expire in =>  6731  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:xD-2qzqvEXQCHnrHAAAK
+Delete  SocketId:TCP77POaeDQairPxAAAJ
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  6373  seconds
+expire in =>  6373  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  6376  seconds
+expire in =>  6376  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:fFmxE5b4l4raf3krAAAM
+Delete  SocketId:BOdt4JlGx-8AgEwsAAAL
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:Ei2XVs7UX3byzJvzAAAO
+Delete  SocketId:066iM2I4lekT9dMXAAAN
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:EduaDsfyhZ09xJKkAAAP
+Delete  SocketId:3Vl2rNh5ZFGndnzaAAAQ
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  5976  seconds
+expire in =>  5976  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  5978  seconds
+expire in =>  5978  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:JjsaX8uwn1Bwv_7PAAAR
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  5944  seconds
+expire in =>  5944  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:R8sj_1c57V1eNlnmAAAT
+Delete  SocketId:w5_Ev0byQ_zm6w-NAAAS
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  5749  seconds
+expire in =>  5749  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  5759  seconds
+expire in =>  5759  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:b-oZB0AAJq_w09RKAAAV
+Delete  SocketId:6PwxKqWMtP3FQzunAAAU
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:P4PpoKXgRy6VgNcUAAAX
+Delete  SocketId:8uN7zMQ1QsMFvMPVAAAW
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:29K5yZQQLM59mGVDAAAY
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:meTWu0yCblnLCVfOAAAa
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:iZ3BP_cvOgOJ4UiKAAAb
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:nUoN1JcCVeskCpZrAAAc
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  5173  seconds
+expire in =>  5173  seconds
+Delete  SocketId:OAvnIonmfpiDGpWSAAAZ
+Delete  SocketId:CT5w2H3jf0XDGj_wAAAd
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:UXudsmBcF5dqlbFVAAAf
+Delete  SocketId:6OXSawFm649vfEK-AAAe
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:KLJ440dkjfD05uibAAAh
+Delete  SocketId:H-ImBu4j1bJbCqeQAAAg
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  4878  seconds
+expire in =>  4878  seconds
+Delete  SocketId:9TtD3IEqsYbJEylJAAAi
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  4777  seconds
+expire in =>  4777  seconds
+Delete  SocketId:v2VZGZu0dLwU7WUdAAAk
+Delete  SocketId:QdNj3FeXBbTzG9k5AAAj
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:q5EHUSQ44gALXI0wAAAl
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  4651  seconds
+expire in =>  4651  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:gs6f2dlvsr-3hC1lAAAn
+Delete  SocketId:Uy5rjoF6vh8pSY8tAAAm
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  4575  seconds
+expire in =>  4575  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:l2RFNTa74L2piJfXAAAp
+Delete  SocketId:XewwpiQVzX2ZkLYGAAAo
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:BNHbcvBxJD7r5sTGAAAq
+Delete  SocketId:y0XffC8x_qYfeervAAAr
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:4H6BHMLTrJAUa3mKAAAs
+Delete  SocketId:L2Y-y2gyaBozHGTWAAAt
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:Nw_ynlSeRgptgYE6AAAv
+Delete  SocketId:AZZp2kYoSgCk-dOCAAAu
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:twx3apOdgqL9XhakAAAx
+Delete  SocketId:gjWqO8fIof75i_zjAAAw
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  3775  seconds
+expire in =>  3775  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:GCB-QVw7ua0X5vR7AAAz
+Delete  SocketId:oFsHVjGmIPvVwURBAAAy
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  3687  seconds
+expire in =>  3687  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  3677  seconds
+expire in =>  3677  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:17BRrZriDLHRmRS2AAA0
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  3591  seconds
+expire in =>  3591  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:zceO1OWa0sIC--V9AAA1
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  3544  seconds
+expire in =>  3544  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:fNIBt9zwkPsADOqoAAA3
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:lwkPVI7xfgqTiDFBAAA4
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  2806  seconds
+expire in =>  2806  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:9hBb6AUvMuA5GsUkAAA5
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:CaHE-Nke0LxGGjvbAAA6
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:cPrYFTfHPPGMpooqAAA7
+Delete  SocketId:xqYt5e3bY4Au7Zh-AAA2
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:VtxcVBm5FwY5gG3cAAA8
+Delete  SocketId:_1wN6HI6JI3EJec3AAA9
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:K-tUz_88QSekl-23AAA_
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:V37nkjWzbRBzySA8AABA
+Delete  SocketId:Lxiq2pvrLjuNAkKcAAA-
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  2454  seconds
+expire in =>  2454  seconds
+Delete  SocketId:F6oS8NU06838LNvyAABC
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:Ato25mAp4PUTyRGvAABB
+Delete  SocketId:vfcldGXUbppEy6RfAABD
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:Q3hlelk21XNFEDTUAABE
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  1812  seconds
+expire in =>  1812  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:mcTGcL6z9EvxKXQGAABG
+Delete  SocketId:vY9k96dSz3lWCEO2AABF
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:W3aRKUbhOF9A6gFjAABI
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:tleV3LbbU4Kfug9-AABJ
+Delete  SocketId:AfEp4Ia-SDsgsYAAAABH
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  1624  seconds
+expire in =>  1624  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:l1HiPpb2g1sIiVdcAABL
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:dcK1Xja6zEqZ4cw1AABM
+Delete  SocketId:kwZZ5YOYijiMvs-rAABK
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  1547  seconds
+expire in =>  1547  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  1516  seconds
+expire in =>  1516  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:l0bkEcmHpOXohjhsAABN
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:6x9sTkEBC8cb2NUhAABP
+Delete  SocketId:lOR2CY7G1Hktu2W2AABO
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:WXROExig1t9AcCkCAABQ
+Delete  SocketId:hhvFmGhQxhi1QpVeAABR
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  1451  seconds
+expire in =>  1451  seconds
+Delete  SocketId:gAiO4T_g_l4v20vhAABT
+Delete  SocketId:BVzFq168-M9SwyczAABS
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:TECTKHbmRPNgmVwJAABU
+Delete  SocketId:UO2lJJCZ4QfAKORZAABV
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:IBaKkS0qvesFDGfxAABW
+Delete  SocketId:8V6jeOF1teSA6hc8AABX
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  1260  seconds
+expire in =>  1260  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:aMNt9g_j7114Uxs4AABY
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:5FCC0BU_-Q7KbcPuAABa
+Delete  SocketId:_VIjWl0pGN0Op6F1AABZ
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:NEBInVrfsmgY8qGKAABc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  1141  seconds
+expire in =>  1141  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:csmVMdnVvM9ySs2vAABd
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:h3tUEBwxn5tz5fTjAABe
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:ojwcihySjL8dgU9iAABf
+Delete  SocketId:G8NDY84E43H1uy8sAABb
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='adNetwork' or BINARY um.email_id ='adNetwork' 
+                        and BINARY um.user_group = 'admin' group by um.id limit 1
+expire in =>  1078  seconds
+expire in =>  1078  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  1051  seconds
+expire in =>  1051  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:cSQf8TcnGhIrTx9WAABg
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:bWIXxnORzG6V3Bc1AABi
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-07') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:fN9qSFsLtnuj0gFYAABj
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:cfq1llb1yMPDeALJAABk
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:jge6KvcKqGqRAAYSAABl
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:HgveU5Mp-ouuFpHLAABh
+Delete  SocketId:VOuFE5n0_2ffbPNSAABm
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:bbiSZoOq2-jyzfIHAABn
+Delete  SocketId:hpcyBRbbz5Ek77ayAABo
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:ZFfxZ46ZJA9GMkGdAABp
+Delete  SocketId:xKuyL69rAM-tHNR_AABq
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:Ria8QQjFv4pAaGxqAABs
+Delete  SocketId:N59nIwcEOV_urTwnAABr
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:V6uDNruHOZtCEKxJAABt
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/registerUserRoleToRight
+required check ------------------------->  false
+						 
+ new_right_updated brodcasted 
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:zWEld8LAMqwuI2CNAABu
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+Delete  SocketId:nkVsUgbkfuThW8vkAABw
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+Delete  SocketId:X-cbYiiZwMeIjtZZAABx
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-07') as today_count
+                    from application_master as am
+                    where am.user_id = '2' 
+                    group by am.id
+                    order by am.name asc
+Delete  SocketId:__h1PxCnWj_c6YLIAABy

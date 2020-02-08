@@ -1,0 +1,47 @@
+socket server started on port 4002
+Listening HTTP on port 3004
+Delete  SocketId:LerkVwyWXkr7aIBPAAAA
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:nwJWzLPEWZN3wNaCAAAC
+requested_plain_url ==>    /User/EtiN5C.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+Delete  SocketId:ZCAoIFfw-coG8TjAAAAB
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-06') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-06') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false

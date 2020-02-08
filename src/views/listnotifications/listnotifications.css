@@ -1,0 +1,9 @@
+select#rightid {
+    width: 65px;
+}
+@media screen and (max-width: 576px) {
+    .col {
+        flex-basis: auto !important;
+        width:100% !important;
+        }    
+    }

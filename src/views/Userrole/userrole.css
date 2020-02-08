@@ -1,0 +1,12 @@
+.form-check-inline {
+    display: inline-block;
+    margin-right: 0.75rem;
+    margin-left: 20px;
+}
+.form-check-label {
+    padding-left: 0px !important;
+    margin-bottom: 0;
+}
+span.size {
+    font-size: 11px;
+}

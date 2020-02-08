@@ -1,0 +1,1544 @@
+socket server started on port 4002
+Listening HTTP on port 3004
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/flOunv.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-04') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-04') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-04') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-04') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/uploadApplicationIcon
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/uploadApplicationIcon
+required check ------------------------->  false
+requested_plain_url ==>    /Application/m5nSRi.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/insertApplication
+required check ------------------------->  false
+desc -------------_> 	demo-app
+checkDuplicateApplication 
+select count(id) as count from application_master where package in('com.app-1')
+desc 		demo-app
+insertApplication sql 
+ insert into application_master(
+                    name,
+                    description,
+                    package,
+                    icon,
+                    type,
+                    owner,
+                    user_id,
+                    link,
+                    banner,
+                    data,
+                    web_view,
+                    privacy,
+                    other,
+                    status
+                ) values(
+                    'app-1',
+                    "demo-app",
+                    'com.app-1',
+                    'Application/AbQyVA.jpeg',
+                    1,
+                    'publisher',
+                    19,
+                    'http://localhost/phase_1_ad_network/build/#/editapp/49',
+                    'Application/m5nSRi.jpg',
+                    '"YWxs"',
+                    1,
+                    'AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol',
+                    '{"is_features":"","more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol"}',
+                    1
+                )
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getViewApplicationDetailsById
+required check ------------------------->  false
+getApplication sql ===>  select 
+                        c.*
+                    from application_master as c 
+                    where 
+                        c.id= 1
+                    limit 1
+requested_plain_url ==>    /Application/getAppMonetisation
+required check ------------------------->  false
+getAppMonetisation sql 
+  select 
+                        aasm.*,
+                        am.name as app_name,
+                        am.name as app_icon,
+                        am.name as app_package,
+                        am.name as app_description,
+                        am.name as app_type,
+                        am.name as app_is_live,
+                        am.name as app_status
+                    from application_ads_mapping as aasm
+                    left join application_master as am on am.id = aasm.app_id
+                    where aasm.app_id = 1
+                    group by aasm.id
+                    order by am.name
+                     limit 1
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getViewApplicationDetailsById
+required check ------------------------->  false
+getApplication sql ===>  select 
+                        c.*
+                    from application_master as c 
+                    where 
+                        c.id= 1
+                    limit 1
+requested_plain_url ==>    /Application/getAppMonetisation
+required check ------------------------->  false
+getAppMonetisation sql 
+  select 
+                        aasm.*,
+                        am.name as app_name,
+                        am.name as app_icon,
+                        am.name as app_package,
+                        am.name as app_description,
+                        am.name as app_type,
+                        am.name as app_is_live,
+                        am.name as app_status
+                    from application_ads_mapping as aasm
+                    left join application_master as am on am.id = aasm.app_id
+                    where aasm.app_id = 1
+                    group by aasm.id
+                    order by am.name
+                     limit 1
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/uploadApplicationIcon
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/uploadApplicationIcon
+required check ------------------------->  false
+requested_plain_url ==>    /Application/X4Kcbi.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/insertApplication
+required check ------------------------->  false
+desc -------------_> 	demo
+checkDuplicateApplication 
+select count(id) as count from application_master where package in('com.app-2')
+desc 		demo
+insertApplication sql 
+ insert into application_master(
+                    name,
+                    description,
+                    package,
+                    icon,
+                    type,
+                    owner,
+                    user_id,
+                    link,
+                    banner,
+                    data,
+                    web_view,
+                    privacy,
+                    other,
+                    status
+                ) values(
+                    'app-2',
+                    "demo",
+                    'com.app-2',
+                    'Application/Fvq1WO.jpeg',
+                    2,
+                    'publisher',
+                    19,
+                    'http://localhost:8080/#/CreateApp',
+                    'Application/X4Kcbi.jpeg',
+                    '"YWxs"',
+                    1,
+                    'AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol',
+                    '{"is_features":"","more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol"}',
+                    1
+                )
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getCustomAds
+required check ------------------------->  false
+getCustomAds sql 
+  select 
+                        am.id as app_id,
+                        am.name as app_name,
+                        am.package as app_package,
+                        am.icon as app_icon,
+                        (
+                            select 
+                                CONCAT(
+                                    '[', 
+                                        GROUP_CONCAT(
+                                            JSON_OBJECT(
+                                                'app_id', am1.id,
+                                                'app_name', am1.name,
+                                                'app_package', am1.package,
+                                                'app_icon', am1.icon,
+                                                'row_checked', true
+                                            )
+                                        ), 
+                                    ']'
+                                )
+                            from application_master as am1 
+                            where am1.id = cam.advertiser_app_id
+                            order by am1.name
+                        ) as app_list
+                    from custom_ads_mapping as cam
+                    left join application_master as am on am.id = cam.publisher_app_id 
+                    where cam.publisher_app_id = 1
+                    order by am.name asc
+requested_plain_url ==>    /UserRole/searchUserRole
+required check ------------------------->  false
+requested_plain_url ==>    /AP/registerUsers
+required check ------------------------->  false
+users.secret_key --------------------> 
+registerUsers sql --------------->  insert into users_master(
+                                    status,
+                                    create_by,
+                                    first_name,
+                                    last_name,
+                                    email_id,
+                                    mobile_no,
+                                    user_type
+                                ) values (
+                                    1,
+                                    1,
+                                    'Raj',
+                                    'Savaliya',
+                                    'raj@gmail.com',
+                                    '7878787878',
+                                    1
+                                )
+createLogin sql ---------------> insert into user_master(
+                    status,
+                    create_by,
+                    first_name,
+                    last_name,
+                    username,
+                    email_id,
+                    mobile_no,
+                    password,
+                    user_role_id,
+                    user_group,
+                    user_group_id
+                ) values (
+                    1,
+                    1,
+                    'Raj',
+                    'Savaliya',
+                    '',
+                    'raj@gmail.com',
+                    '7878787878',
+                    '$2a$05$7E8LEGYcfOT0zYYqKg3ATOUPxLT8U3diOURRhdnumrTkg6PVu/572',
+                    2,
+                    'advertiser',
+                    4
+                )
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='raj@gmail.com' or BINARY um.email_id ='raj@gmail.com' 
+                        and BINARY um.user_group = 'advertiser' group by um.id limit 1
+setSecretKey sql ==========>  update user_master set secret_key = 'MjBfYWR2ZXJ0aXNlcl80XzI='
+                        where id = 20
+user1
+{ id: 20,
+  secret_key: 'MjBfYWR2ZXJ0aXNlcl80XzI=',
+  username: '',
+  user_email: 'raj@gmail.com',
+  access_token: null,
+  refresh_token: null,
+  expire_time: null,
+  updated_at: '2020-02-04 18:12:37',
+  user_group: 'advertiser',
+  user_group_id: 4 }
+a[c] ------> *
+salt ----------------------------------> b.join('')Vjw1vNLqXcZQnlWs*lTyrQaxlrTXiMhI
+a[c] ------> (
+salt ----------------------------------> b.join('')lwomoaMMsLFHbfWx(QUyCgXeh9MgTgkh
+_updateTokenDetails sql ============> 	
+ update user_master set  
+                    access_token = "Vjw1vNLqXcZQnlWs*lTyrQaxlrTXiMhI",
+                    refresh_token = "lwomoaMMsLFHbfWx(QUyCgXeh9MgTgkh",
+                    expire_time = "2020-02-04 20:12:37"
+                    where id = 20
+redis_obj stored
+{ id: 20,
+  secret_key: 'MjBfYWR2ZXJ0aXNlcl80XzI=',
+  username: '',
+  user_email: 'raj@gmail.com',
+  access_token: 'Vjw1vNLqXcZQnlWs*lTyrQaxlrTXiMhI',
+  refresh_token: 'lwomoaMMsLFHbfWx(QUyCgXeh9MgTgkh',
+  expire_time: '2020-02-04 20:12:37',
+  server_time: '2020-02-04 18:12:37',
+  updated_at: '2020-02-04 18:12:37',
+  user_group: 'advertiser',
+  user_group_id: 4 }
+expire in =>  7140  seconds
+expire in =>  7140  seconds
+requested_plain_url ==>    /Application/getAdvertiserAppHitCount
+required check ------------------------->  false
+getAdvertiserAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(id) from application_hit_count where request_id = am.id) as total_count,
+                        (select count(id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-04') as today_count
+                    from application_master as am
+                    where am.user_id = '20' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 20 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 20 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/uploadApplicationIcon
+required check ------------------------->  false
+requested_plain_url ==>    /Application/q5cGVp.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/uploadApplicationIcon
+required check ------------------------->  false
+requested_plain_url ==>    /Application/oIQ8Wd.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/insertApplication
+required check ------------------------->  false
+desc -------------_> 	demo
+checkDuplicateApplication 
+select count(id) as count from application_master where package in('com.app-3')
+desc 		demo
+insertApplication sql 
+ insert into application_master(
+                    name,
+                    description,
+                    package,
+                    icon,
+                    type,
+                    owner,
+                    user_id,
+                    link,
+                    banner,
+                    data,
+                    web_view,
+                    privacy,
+                    other,
+                    status
+                ) values(
+                    'app-3',
+                    "demo",
+                    'com.app-3',
+                    'Application/q5cGVp.jpg',
+                    3,
+                    'advertiser',
+                    20,
+                    'http://localhost:8080/#/CreateApp',
+                    'Application/oIQ8Wd.jpg',
+                    '"YWxs"',
+                    1,
+                    'AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol',
+                    '{"is_features":1,"more_apps":"","version_code":"","exit_status":"","serverKey":""}',
+                    1
+                )
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getViewApplicationDetailsById
+required check ------------------------->  false
+getApplication sql ===>  select 
+                        c.*
+                    from application_master as c 
+                    where 
+                        c.id= 3
+                    limit 1
+requested_plain_url ==>    /Application/getAppMonetisation
+required check ------------------------->  false
+getAppMonetisation sql 
+  select 
+                        aasm.*,
+                        am.name as app_name,
+                        am.name as app_icon,
+                        am.name as app_package,
+                        am.name as app_description,
+                        am.name as app_type,
+                        am.name as app_is_live,
+                        am.name as app_status
+                    from application_ads_mapping as aasm
+                    left join application_master as am on am.id = aasm.app_id
+                    where aasm.app_id = 3
+                    group by aasm.id
+                    order by am.name
+                     limit 1
+requested_plain_url ==>    /Application/uploadApplicationIcon
+required check ------------------------->  false
+requested_plain_url ==>    /Application/nSok38.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/uploadApplicationIcon
+required check ------------------------->  false
+requested_plain_url ==>    /Application/pC2BsI.png
+multimedia[(multimedia.length - 1)]png
+required check ------------------------->  false
+requested_plain_url ==>    /Application/insertApplication
+required check ------------------------->  false
+desc -------------_> 	demo
+checkDuplicateApplication 
+select count(id) as count from application_master where package in('com.app-4')
+desc 		demo
+insertApplication sql 
+ insert into application_master(
+                    name,
+                    description,
+                    package,
+                    icon,
+                    type,
+                    owner,
+                    user_id,
+                    link,
+                    banner,
+                    data,
+                    web_view,
+                    privacy,
+                    other,
+                    status
+                ) values(
+                    'app-4',
+                    "demo",
+                    'com.app-4',
+                    'Application/nSok38.jpeg',
+                    2,
+                    'advertiser',
+                    20,
+                    'http://localhost:8080/#/CreateApp',
+                    'Application/pC2BsI.png',
+                    '"YWxs"',
+                    1,
+                    'AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol',
+                    '{"is_features":1,"more_apps":"","version_code":"","exit_status":"","serverKey":""}',
+                    1
+                )
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /User/getAuthTokens
+required check ------------------------->  false
+getAuthTokens login  sql ---------------------> 
+	  select 
+                            um.*, 
+                            ur.id as user_role_id, 
+                            ur.name as user_role,
+                            um.status 
+                        from user_master as um  
+                        left join user_role as ur on ur.id = um.user_role_id 
+                        where BINARY um.username ='dixit20051998@gmail.com' or BINARY um.email_id ='dixit20051998@gmail.com' 
+                        and BINARY um.user_group = 'publisher' group by um.id limit 1
+expire in =>  6211  seconds
+expire in =>  6211  seconds
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-04') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-04') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+Delete  SocketId:MBSFNFGQ8m6VIi5XAAAB
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/nSok38.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/q5cGVp.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getCustomAds
+required check ------------------------->  false
+getCustomAds sql 
+  select 
+                        am.id as app_id,
+                        am.name as app_name,
+                        am.package as app_package,
+                        am.icon as app_icon,
+                        (
+                            select 
+                                CONCAT(
+                                    '[', 
+                                        GROUP_CONCAT(
+                                            JSON_OBJECT(
+                                                'app_id', am1.id,
+                                                'app_name', am1.name,
+                                                'app_package', am1.package,
+                                                'app_icon', am1.icon,
+                                                'row_checked', true
+                                            )
+                                        ), 
+                                    ']'
+                                )
+                            from application_master as am1 
+                            where am1.id = cam.advertiser_app_id
+                            order by am1.name
+                        ) as app_list
+                    from custom_ads_mapping as cam
+                    left join application_master as am on am.id = cam.publisher_app_id 
+                    where cam.publisher_app_id = 1
+                    order by am.name asc
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/insertAppMonetisation
+required check ------------------------->  false
+checkAppMonetisation 
+select count(id) as count from application_ads_mapping where app_id =1
+insertAppMonetisation sql 
+ insert into application_ads_mapping(app_id, data, status) values(
+                    1,
+                    '{"id":"","app_id":"","status":"1","FB_ADS":"","FB_id":"","FB_banner_ads":"","FB_native_ads":"","FB_interstitial_ads":"","FB_native_banner":"","FB_rewareded_ads":"","GAN_ADS":"","GAN_id":"","GAN_banner_ads":"","GAN_rewareded_ads":"","GAN_interstitial_ads":"","GAN_native_banner":"","GAN_native_ads":"","MO_id":"","MO_native_ads":"","MO_banner_ads":"","MO_interstitial_ads":"","MO_ADS":"","MO_rewareded_ads":"","MO_native_banner":""}',
+                    1
+                )
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+Delete  SocketId:Bdhy0dTK8CDc4P4MAAAC
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /Application/q5cGVp.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/nSok38.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getCustomAds
+required check ------------------------->  false
+getCustomAds sql 
+  select 
+                        am.id as app_id,
+                        am.name as app_name,
+                        am.package as app_package,
+                        am.icon as app_icon,
+                        (
+                            select 
+                                CONCAT(
+                                    '[', 
+                                        GROUP_CONCAT(
+                                            JSON_OBJECT(
+                                                'app_id', am1.id,
+                                                'app_name', am1.name,
+                                                'app_package', am1.package,
+                                                'app_icon', am1.icon,
+                                                'row_checked', true
+                                            )
+                                        ), 
+                                    ']'
+                                )
+                            from application_master as am1 
+                            where am1.id = cam.advertiser_app_id
+                            order by am1.name
+                        ) as app_list
+                    from custom_ads_mapping as cam
+                    left join application_master as am on am.id = cam.publisher_app_id 
+                    where cam.publisher_app_id = 1
+                    order by am.name asc
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAppMonetisation
+required check ------------------------->  false
+getAppMonetisation sql 
+  select 
+                        aasm.*,
+                        am.name as app_name,
+                        am.name as app_icon,
+                        am.name as app_package,
+                        am.name as app_description,
+                        am.name as app_type,
+                        am.name as app_is_live,
+                        am.name as app_status
+                    from application_ads_mapping as aasm
+                    left join application_master as am on am.id = aasm.app_id
+                    where aasm.app_id = 1
+                    group by aasm.id
+                    order by am.name
+                     limit 1
+requested_plain_url ==>    /Application/removeAppMonetisation
+required check ------------------------->  false
+removeAppMonetisation sql 
+ delete from application_ads_mapping where id = 1
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getCustomAds
+required check ------------------------->  false
+getCustomAds sql 
+  select 
+                        am.id as app_id,
+                        am.name as app_name,
+                        am.package as app_package,
+                        am.icon as app_icon,
+                        (
+                            select 
+                                CONCAT(
+                                    '[', 
+                                        GROUP_CONCAT(
+                                            JSON_OBJECT(
+                                                'app_id', am1.id,
+                                                'app_name', am1.name,
+                                                'app_package', am1.package,
+                                                'app_icon', am1.icon,
+                                                'row_checked', true
+                                            )
+                                        ), 
+                                    ']'
+                                )
+                            from application_master as am1 
+                            where am1.id = cam.advertiser_app_id
+                            order by am1.name
+                        ) as app_list
+                    from custom_ads_mapping as cam
+                    left join application_master as am on am.id = cam.publisher_app_id 
+                    where cam.publisher_app_id = 1
+                    order by am.name asc
+requested_plain_url ==>    /Application/insertCustomAds
+required check ------------------------->  false
+deleteCustomAds sql 
+delete from custom_ads_mapping where publisher_app_id = 1
+insertCustomAds sql 
+ insert into custom_ads_mapping(publisher_app_id, publisher_app_package, advertiser_app_id, advertiser_app_package, status) values ?
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getCustomAds
+required check ------------------------->  false
+getCustomAds sql 
+  select 
+                        am.id as app_id,
+                        am.name as app_name,
+                        am.package as app_package,
+                        am.icon as app_icon,
+                        (
+                            select 
+                                CONCAT(
+                                    '[', 
+                                        GROUP_CONCAT(
+                                            JSON_OBJECT(
+                                                'app_id', am1.id,
+                                                'app_name', am1.name,
+                                                'app_package', am1.package,
+                                                'app_icon', am1.icon,
+                                                'row_checked', true
+                                            )
+                                        ), 
+                                    ']'
+                                )
+                            from application_master as am1 
+                            where am1.id = cam.advertiser_app_id
+                            order by am1.name
+                        ) as app_list
+                    from custom_ads_mapping as cam
+                    left join application_master as am on am.id = cam.publisher_app_id 
+                    where cam.publisher_app_id = 2
+                    order by am.name asc
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getCustomAds
+required check ------------------------->  false
+getCustomAds sql 
+  select 
+                        am.id as app_id,
+                        am.name as app_name,
+                        am.package as app_package,
+                        am.icon as app_icon,
+                        (
+                            select 
+                                CONCAT(
+                                    '[', 
+                                        GROUP_CONCAT(
+                                            JSON_OBJECT(
+                                                'app_id', am1.id,
+                                                'app_name', am1.name,
+                                                'app_package', am1.package,
+                                                'app_icon', am1.icon,
+                                                'row_checked', true
+                                            )
+                                        ), 
+                                    ']'
+                                )
+                            from application_master as am1 
+                            where am1.id = cam.advertiser_app_id
+                            order by am1.name
+                        ) as app_list
+                    from custom_ads_mapping as cam
+                    left join application_master as am on am.id = cam.publisher_app_id 
+                    where cam.publisher_app_id = 1
+                    order by am.name asc
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getCustomAds
+required check ------------------------->  false
+getCustomAds sql 
+  select 
+                        am.id as app_id,
+                        am.name as app_name,
+                        am.package as app_package,
+                        am.icon as app_icon,
+                        (
+                            select 
+                                CONCAT(
+                                    '[', 
+                                        GROUP_CONCAT(
+                                            JSON_OBJECT(
+                                                'app_id', am1.id,
+                                                'app_name', am1.name,
+                                                'app_package', am1.package,
+                                                'app_icon', am1.icon,
+                                                'row_checked', true
+                                            )
+                                        ), 
+                                    ']'
+                                )
+                            from application_master as am1 
+                            where am1.id = cam.advertiser_app_id
+                            order by am1.name
+                        ) as app_list
+                    from custom_ads_mapping as cam
+                    left join application_master as am on am.id = cam.publisher_app_id 
+                    where cam.publisher_app_id = 2
+                    order by am.name asc
+Delete  SocketId:NUEPIbtmI4-yGAl7AAAD
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/q5cGVp.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/nSok38.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getCustomAds
+required check ------------------------->  false
+getCustomAds sql 
+  select 
+                        am.id as app_id,
+                        am.name as app_name,
+                        am.package as app_package,
+                        am.icon as app_icon,
+                        (
+                            select 
+                                CONCAT(
+                                    '[', 
+                                        GROUP_CONCAT(
+                                            JSON_OBJECT(
+                                                'app_id', am1.id,
+                                                'app_name', am1.name,
+                                                'app_package', am1.package,
+                                                'app_icon', am1.icon,
+                                                'row_checked', true
+                                            )
+                                        ), 
+                                    ']'
+                                )
+                            from application_master as am1 
+                            where am1.id = cam.advertiser_app_id
+                            order by am1.name
+                        ) as app_list
+                    from custom_ads_mapping as cam
+                    left join application_master as am on am.id = cam.publisher_app_id 
+                    where cam.publisher_app_id = 2
+                    order by am.name asc
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getAppMonetisation
+required check ------------------------->  false
+getAppMonetisation sql 
+  select 
+                        aasm.*,
+                        am.name as app_name,
+                        am.name as app_icon,
+                        am.name as app_package,
+                        am.name as app_description,
+                        am.name as app_type,
+                        am.name as app_is_live,
+                        am.name as app_status
+                    from application_ads_mapping as aasm
+                    left join application_master as am on am.id = aasm.app_id
+                    where aasm.app_id = 1
+                    group by aasm.id
+                    order by am.name
+                     limit 1
+requested_plain_url ==>    /Application/insertAppMonetisation
+required check ------------------------->  false
+checkAppMonetisation 
+select count(id) as count from application_ads_mapping where app_id =1
+insertAppMonetisation sql 
+ insert into application_ads_mapping(app_id, data, status) values(
+                    1,
+                    '{"id":"","app_id":1,"status":"1","FB_ADS":false,"FB_id":"","FB_banner_ads":"","FB_native_ads":"","FB_interstitial_ads":"","FB_native_banner":"","FB_rewareded_ads":"","GAN_ADS":true,"GAN_id":"","GAN_banner_ads":"","GAN_rewareded_ads":"","GAN_interstitial_ads":"","GAN_native_banner":"","GAN_native_ads":"","MO_id":"","MO_native_ads":"","MO_banner_ads":"","MO_interstitial_ads":"","MO_ADS":false,"MO_rewareded_ads":"","MO_native_banner":""}',
+                    1
+                )
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/sendPushNotification
+required check ------------------------->  false
+newApp 	  [{"id":1,"name":"app-1","package":"com.app-1","fcm":null,"icon":"Application/AbQyVA.jpeg","type":1,"is_live":0,"owner":"publisher","user_id":19,"link":"http://localhost/phase_1_ad_network/build/#/editapp/49","banner":"Application/m5nSRi.jpg","data":null,"web_view":1,"privacy":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","status":1,"owner_name":"Dixit savaliya","ad_id":2,"ad_status":1,"fb_ads_status":null,"mopub_ads_status":null,"admob_ads_status":null,"more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","_rowChecked":true}]
+else case imediate send
+data is valid JSON 
+insertShedular sql 
+ insert into shedule_master(data, user_id, time, status) values('{"notification":{"title":"testing notification","message":"demo","icon":null,"url":"","click_action":""},"app_list":[{"id":1,"name":"app-1","package":"com.app-1","fcm":null,"icon":"Application/AbQyVA.jpeg","type":1,"is_live":0,"owner":"publisher","user_id":19,"link":"http://localhost/phase_1_ad_network/build/#/editapp/49","banner":"Application/m5nSRi.jpg","data":null,"web_view":1,"privacy":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","status":1,"owner_name":"Dixit savaliya","ad_id":2,"ad_status":1,"fb_ads_status":null,"mopub_ads_status":null,"admob_ads_status":null,"more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","_rowChecked":true}],"status":1,"type":0,"time":"","time_type":{"once":true,"daily":false,"weekly":false,"monthly":false}}', 19, '2020-02-04 18:16:44', 1);
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /User/uploadUserImage
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getPublisherAppHitCount
+required check ------------------------->  false
+getPublisherAppHitCount sql 
+  select 
+                        am.id,
+                        am.name,
+                        am.icon,
+                        am.banner,
+                        am.package,
+                        (select count(request_id) from application_hit_count where request_id = am.id) as total_impression_count,
+                        (select count(request_id) from application_hit_count where request_id = am.id and cast(create_date as date) = '2020-02-04') as today_impression_count,
+                        (select count(id) from application_hit_count where app_id = am.id) as total_hit_count,
+                        (select count(id) from application_hit_count where app_id = am.id and cast(create_date as date) = '2020-02-04') as today_hit_count
+                    from application_master as am
+                    where am.user_id = '19' 
+                    group by am.id
+                    order by am.name asc
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/notificationCount
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/notificationCount
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/notificationByPage
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/notificationByPage
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getViewApplicationDetailsById
+required check ------------------------->  false
+getApplication sql ===>  select 
+                        c.*
+                    from application_master as c 
+                    where 
+                        c.id= 1
+                    limit 1
+requested_plain_url ==>    /Application/getAppMonetisation
+required check ------------------------->  false
+getAppMonetisation sql 
+  select 
+                        aasm.*,
+                        am.name as app_name,
+                        am.name as app_icon,
+                        am.name as app_package,
+                        am.name as app_description,
+                        am.name as app_type,
+                        am.name as app_is_live,
+                        am.name as app_status
+                    from application_ads_mapping as aasm
+                    left join application_master as am on am.id = aasm.app_id
+                    where aasm.app_id = 1
+                    group by aasm.id
+                    order by am.name
+                     limit 1
+requested_plain_url ==>    /Application/m5nSRi.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+Delete  SocketId:QnjLkZNP7jNdPYwDAAAE
+Delete  SocketId:78OZFUXHhn8h-UkzAAAA
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/flOunv.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+Delete  SocketId:kuEfq8nPXE1xGT0fAAAG
+Delete  SocketId:JqFS6Nx-9yAhD8x0AAAF
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 2 and um.status = 1 group by um.id
+requested_plain_url ==>    /UserRole/getUserRole
+required check ------------------------->  false
+getUserRole sql ===> select ur.* from user_role as ur 
+requested_plain_url ==>    /UserRole/getUserRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/flOunv.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getApplication
+required check ------------------------->  false
+getApplication sql ===>  select 
+                        c.*
+                    from application_master as c 
+                    where 
+                        c.id= 1 and
+                        c.user_id= 19 and
+                        c.owner= 'publisher'
+                    limit 1
+requested_plain_url ==>    /Application/m5nSRi.jpg
+multimedia[(multimedia.length - 1)]jpg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/updateApplication
+required check ------------------------->  false
+desc -------------_> 	demo-app
+desc 		demo-app
+updateApplication sql 
+
+update application_master set 
+                        name = 'app-1',
+                        description = "demo-app",
+                        package = 'com.app-1',
+                        icon = 'Application/AbQyVA.jpeg',
+                        type = 1,
+                        is_live = 0,
+                        link = 'http://localhost/phase_1_ad_network/build/#/editapp/49',
+                        banner = 'Application/m5nSRi.jpg',
+                        data = '"YWxs"',
+                        web_view = 1,
+                        privacy = 'AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol',
+                        other = '{"is_features":"","more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol"}',
+                        status = 1
+                    where id =1
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/getApplication
+required check ------------------------->  false
+getApplication sql ===>  select 
+                        c.*
+                    from application_master as c 
+                    where 
+                        c.id= 2 and
+                        c.user_id= 19 and
+                        c.owner= 'publisher'
+                    limit 1
+requested_plain_url ==>    /Application/X4Kcbi.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/updateApplication
+required check ------------------------->  false
+desc -------------_> 	demo
+desc 		demo
+updateApplication sql 
+
+update application_master set 
+                        name = 'app-2',
+                        description = "demo",
+                        package = 'com.app-2',
+                        icon = 'Application/Fvq1WO.jpeg',
+                        type = 2,
+                        is_live = 0,
+                        link = 'http://localhost:8080/#/CreateApp',
+                        banner = 'Application/X4Kcbi.jpeg',
+                        data = '"YWxs"',
+                        web_view = 1,
+                        privacy = 'AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol',
+                        other = '{"is_features":"","more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol"}',
+                        status = 1
+                    where id =2
+requested_plain_url ==>    /Application/countApplication
+required check ------------------------->  false
+requested_plain_url ==>    /Application/applicationByPg
+required check ------------------------->  false
+Delete  SocketId:OuehiHxBUCq3nRYoAAAH
+requested_plain_url ==>    /AP/updateFCM
+required check ------------------------->  false
+updateAppFCM sql 
+ select 
+                                    count(id) as count,
+                                    id,
+                                    (select count(id) as device_id from device_master where device_id = 'c16747e813cc9bd1' limit 1) as hasDevice
+                                from application_master 
+                                where
+                                    package= 'com.app-1' and 
+                                    owner = 'publisher'
+                                group by id
+                                limit 1
+insertDeviceFCM sql 
+ insert into device_master(app_id, device_id, fcm) VALUES 
+                                                        (
+                                                            1,
+                                                            'c16747e813cc9bd1',
+                                                            'eYiuu7-DBgk:APA91bHTttA59BKXgXuikJLB5rHknnvJiJskOgXglCWzrasHCEyZgrE-hOp3t_d8jHeImej5SxYsScRq_FYgsgfoGaZVas5cP8FEPhVNEei9YpCDdii9q1mcDU9fNfKoIufl95nKkyh8'
+                                                        )
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/sendPushNotification
+required check ------------------------->  false
+newApp 	  [{"id":1,"name":"app-1","package":"com.app-1","fcm":null,"icon":"Application/AbQyVA.jpeg","type":1,"is_live":0,"owner":"publisher","user_id":19,"link":"http://localhost/phase_1_ad_network/build/#/editapp/49","banner":"Application/m5nSRi.jpg","data":null,"web_view":1,"privacy":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","status":1,"owner_name":"Dixit savaliya","ad_id":2,"ad_status":1,"fb_ads_status":null,"mopub_ads_status":null,"admob_ads_status":null,"more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","_rowChecked":true}]
+else case imediate send
+data is valid JSON 
+insertShedular sql 
+ insert into shedule_master(data, user_id, time, status) values('{"notification":{"title":"testing notification","message":"de","icon":null,"url":"","click_action":""},"app_list":[{"id":1,"name":"app-1","package":"com.app-1","fcm":null,"icon":"Application/AbQyVA.jpeg","type":1,"is_live":0,"owner":"publisher","user_id":19,"link":"http://localhost/phase_1_ad_network/build/#/editapp/49","banner":"Application/m5nSRi.jpg","data":null,"web_view":1,"privacy":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","status":1,"owner_name":"Dixit savaliya","ad_id":2,"ad_status":1,"fb_ads_status":null,"mopub_ads_status":null,"admob_ads_status":null,"more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","_rowChecked":true}],"status":1,"type":0,"time":"","time_type":{"once":true,"daily":false,"weekly":false,"monthly":false}}', 19, '2020-02-04 18:39:42', 1);
+Delete  SocketId:p8uxA5vl0m5YHvJqAAAI
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/sendPushNotification
+required check ------------------------->  false
+newApp 	  [{"id":1,"name":"app-1","package":"com.app-1","fcm":null,"icon":"Application/AbQyVA.jpeg","type":1,"is_live":0,"owner":"publisher","user_id":19,"link":"http://localhost/phase_1_ad_network/build/#/editapp/49","banner":"Application/m5nSRi.jpg","data":null,"web_view":1,"privacy":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","status":1,"owner_name":"Dixit savaliya","ad_id":2,"ad_status":1,"fb_ads_status":null,"mopub_ads_status":null,"admob_ads_status":null,"more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","_rowChecked":true}]
+else case imediate send
+data is valid JSON 
+insertShedular sql 
+ insert into shedule_master(data, user_id, time, status) values('{"notification":{"title":"testing notification","message":"sadasddas","icon":null,"url":"","click_action":""},"app_list":[{"id":1,"name":"app-1","package":"com.app-1","fcm":null,"icon":"Application/AbQyVA.jpeg","type":1,"is_live":0,"owner":"publisher","user_id":19,"link":"http://localhost/phase_1_ad_network/build/#/editapp/49","banner":"Application/m5nSRi.jpg","data":null,"web_view":1,"privacy":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","status":1,"owner_name":"Dixit savaliya","ad_id":2,"ad_status":1,"fb_ads_status":null,"mopub_ads_status":null,"admob_ads_status":null,"more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","_rowChecked":true}],"status":1,"type":0,"time":"","time_type":{"once":true,"daily":false,"weekly":false,"monthly":false}}', 19, '2020-02-04 18:40:03', 1);
+Delete  SocketId:8PCAxSaFNPzKECreAAAJ
+requested_plain_url ==>    /User/currentUser
+required check ------------------------->  false
+currentUser sql ------------->  select 
+                    um.*,
+                    if(um.user_group = 'admin_staff', sm.id , null) as type_id,
+                    2 as type,
+                    null as parent_id,
+                    ur.id as user_role_id,
+                    ur.name as user_role
+                from user_master as um 
+                left join staff_master as sm on sm.id = um.user_group_id 
+                left join user_role as ur on ur.id = um.user_role_id
+                where um.id = 19 and um.status = 1 group by um.id
+requested_plain_url ==>    /Application/applicationBySearch
+required check ------------------------->  false
+requested_plain_url ==>    /User/CUyzTB.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /UserRole/getUserRoleToRight
+required check ------------------------->  false
+requested_plain_url ==>    /Application/AbQyVA.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Application/Fvq1WO.jpeg
+multimedia[(multimedia.length - 1)]jpeg
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/sendPushNotification
+required check ------------------------->  false
+newApp 	  [{"id":1,"name":"app-1","package":"com.app-1","fcm":null,"icon":"Application/AbQyVA.jpeg","type":1,"is_live":0,"owner":"publisher","user_id":19,"link":"http://localhost/phase_1_ad_network/build/#/editapp/49","banner":"Application/m5nSRi.jpg","data":null,"web_view":1,"privacy":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","status":1,"owner_name":"Dixit savaliya","ad_id":2,"ad_status":1,"fb_ads_status":null,"mopub_ads_status":null,"admob_ads_status":null,"more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","_rowChecked":true}]
+else case imediate send
+data is valid JSON 
+insertShedular sql 
+ insert into shedule_master(data, user_id, time, status) values('{"notification":{"title":"testing notification","message":"dadadasda","icon":null,"url":"","click_action":""},"app_list":[{"id":1,"name":"app-1","package":"com.app-1","fcm":null,"icon":"Application/AbQyVA.jpeg","type":1,"is_live":0,"owner":"publisher","user_id":19,"link":"http://localhost/phase_1_ad_network/build/#/editapp/49","banner":"Application/m5nSRi.jpg","data":null,"web_view":1,"privacy":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","status":1,"owner_name":"Dixit savaliya","ad_id":2,"ad_status":1,"fb_ads_status":null,"mopub_ads_status":null,"admob_ads_status":null,"more_apps":"https://lh3.googleusercontent.com/2sREY-8UpjmaLDCTztldQf6u2RGUtuyf6VT5iyX3z53JS4TdvfQlX-rNChXKgpBYMw=s180-rw","version_code":"1.2.3","exit_status":1,"serverKey":"AAAAyczcW3c:APA91bFDnaTgWlqBkd_fSvnHVLQQkSKk7UkDvwVT_OPKMmeVhTLYYoDV6ADBNMICkZ9o6LwXJGk4IqM18fgJyWAT2Dhaif2re6LagI51RoENTi8u8vFMtuCMBLcWS4lqE2FPWnjgDNol","_rowChecked":true}],"status":1,"type":0,"time":"","time_type":{"once":true,"daily":false,"weekly":false,"monthly":false}}', 3, '2020-02-04 18:43:11', 1);
+informApps get Devices sql 
+  select 
+                            dm.*
+                        from device_master as dm
+                        where dm.app_id = 1
+appData -----------------------------------> 		 {"title":"testing notification","message":"dadadasda","icon":null,"url":"","click_action":""}
+app : app-1 with package: com.app-1 has fcm token and serverKey 	 
+
+Successfully sent FCM Push message for fcm_token : 	 
+eYiuu7-DBgk:APA91bHTttA59BKXgXuikJLB5rHknnvJiJskOgXglCWzrasHCEyZgrE-hOp3t_d8jHeImej5SxYsScRq_FYgsgfoGaZVas5cP8FEPhVNEei9YpCDdii9q1mcDU9fNfKoIufl95nKkyh8
+increaseNotificationTrueCount sql 
+ update shedule_master set run_state = 1, true_count = (true_count + 1) where id = 4
+Successfully sent FCM Push message for fcm_token : 	 
+eYiuu7-DBgk:APA91bHTttA59BKXgXuikJLB5rHknnvJiJskOgXglCWzrasHCEyZgrE-hOp3t_d8jHeImej5SxYsScRq_FYgsgfoGaZVas5cP8FEPhVNEei9YpCDdii9q1mcDU9fNfKoIufl95nKkyh8
+increaseNotificationTrueCount sql 
+ update shedule_master set run_state = 1, true_count = (true_count + 1) where id = 4
+requested_plain_url ==>    /Notification/notificationCount
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/notificationCount
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/notificationByPage
+required check ------------------------->  false
+requested_plain_url ==>    /Notification/notificationByPage
+required check ------------------------->  false
